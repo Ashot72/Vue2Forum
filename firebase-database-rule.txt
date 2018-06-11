@@ -1,0 +1,21 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+       "users": {
+         ".read": true,
+         ".write": true,
+         ".indexOn": "email"
+       },
+       "forums": {
+         ".read": true,
+         ".write": "auth != null",
+       },
+       "topics": {
+      ".indexOn": "forumId"
+    },
+      "posts": {
+      ".indexOn": "topicId"
+    }
+  }
+}

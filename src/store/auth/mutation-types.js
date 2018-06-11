@@ -1,0 +1,3 @@
+export const AUTHDATA = 'AUTHDATA'
+export const CLEARAUTHDATA = 'CLEARAUTHDATA'
+

@@ -2,9 +2,9 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { EventBus } from './event-bus'
-import { LOADER_EVENT, KEY, STORAGE_KEY } from '../helpers/constants'
-import Auth from '../store/plugins/auth'
-import Forum from '../store/plugins/forum'
+import { LOADER_EVENT, KEY, STORAGE_KEY } from '@/helpers/constants'
+import Auth from '@/store/plugins/auth'
+import Forum from '@/store/plugins/forum'
 
 Vue.use(VueAxios, { 
   auth: axios.create({ }),

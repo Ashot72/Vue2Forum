@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import { AUTHDATA, CLEARAUTHDATA } from './mutation-types'
 import { SIGNUP, SIGNIN, SIGNOUT, AUTOSIGNIN } from './action-types'
-import { STORAGE_KEY } from '../../helpers/constants' 
-import { FAILED } from '../../store'
+import { STORAGE_KEY } from '@/helpers/constants' 
+import { FAILED } from '@/store'
 
 let v = new Vue()
 

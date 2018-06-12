@@ -23,12 +23,12 @@
 </template>
 
 <script>
-  import Signin from '../components/auth/signin/Signin'
-  import Signup from '../components/auth/signup/Signup'
+  import Signin from '@/components/auth/signin/Signin'
+  import Signup from '@/components/auth/signup/Signup'
 
   import { mapState, mapGetters, mapActions } from 'vuex'
-  import { AUTH } from '../store/auth/getter-types'
-  import { SIGNOUT } from '../store/auth/action-types'
+  import { AUTH } from '@/store/auth/getter-types'
+  import { SIGNOUT } from '@/store/auth/action-types'
 
   export default {
     name: 'Header',

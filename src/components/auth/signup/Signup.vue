@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import { SIGNUP } from '../../../store/auth/action-types'
+  import { SIGNUP } from '@/store/auth/action-types'
   import { mapActions } from 'vuex'
   import SignupForm from './SignupForm'
 

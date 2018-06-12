@@ -39,10 +39,10 @@
 
 <script>
    import AddForum from './AddForum'
-   import Confirm from '../../components/shared/Confirm'
+   import Confirm from '@/components/shared/Confirm'
 
-   import { AUTH } from '../../store/auth/getter-types'
-   import { FETCHFORUMS } from '../../store/forum/action-types'
+   import { AUTH } from '@/store/auth/getter-types'
+   import { FETCHFORUMS } from '@/store/forum/action-types'
 
   export default {
     name: 'forums',  

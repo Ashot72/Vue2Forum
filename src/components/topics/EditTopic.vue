@@ -11,8 +11,8 @@
 
 <script>
   import Form from '../shared/Form'
-  import { router } from '../../plugins/vue-router'
-  import { UPDATETOPIC } from '../../store/topic/action-types'
+  import { router } from '@/plugins/vue-router'
+  import { UPDATETOPIC } from '@/store/topic/action-types'
 
   export default {
     name: 'editTopic',

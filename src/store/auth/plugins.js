@@ -1,5 +1,5 @@
 import { AUTHDATA, CLEARAUTHDATA } from './mutation-types'
-import { STORAGE_KEY } from '../../helpers/constants' 
+import { STORAGE_KEY } from '@/helpers/constants' 
 
 const localStoragePlugin = store => {
   store.subscribe((mutation, { auth: { idToken, refreshToken, email, expiresIn }}) => {

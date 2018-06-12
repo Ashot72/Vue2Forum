@@ -24,13 +24,13 @@
 </template>
 
 <script>
-  import Header from './components/Header'
-  import Loader from './components/loading/Loader'
-  import Nav from './components/navigation/Breadcrumb'
-  import Confirm from './components/shared/Confirm'
-  import { EventBus } from './plugins/event-bus'
-  import { LOADER_EVENT } from './helpers/constants'
-  import { CLEARERROR } from './store'
+  import Header from '@/components/Header'
+  import Loader from '@/components/loading/Loader'
+  import Nav from '@/components/navigation/Breadcrumb'
+  import Confirm from '@/components/shared/Confirm'
+  import { EventBus } from '@/plugins/event-bus'
+  import { LOADER_EVENT } from '@/helpers/constants'
+  import { CLEARERROR } from '@/store'
 
   export default {
     name: 'app', 

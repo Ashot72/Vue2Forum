@@ -1,5 +1,5 @@
 import { AUTHDATA, CLEARAUTHDATA } from './mutation-types'
-import { router } from '../../plugins/vue-router'
+import { router } from '@/plugins/vue-router'
 
 export default {
    [AUTHDATA] (state, { idToken, refreshToken, email, expiresIn }) {

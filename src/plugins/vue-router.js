@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from '../router/routes'
-import store from '../plugins/vuex'
-import { AUTOSIGNIN } from '../store/auth/action-types'
-import { AUTH } from '../store/auth/getter-types'
+import routes from '@/router/routes'
+import store from '@/plugins/vuex'
+import { AUTOSIGNIN } from '@/store/auth/action-types'
+import { AUTH } from '@/store/auth/getter-types'
 
 Vue.use(VueRouter)
 

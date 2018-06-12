@@ -10,7 +10,7 @@
 
 <script>
    import Form from '../shared/Form'
-   import { REPLYPOST } from '../../store/post/action-types'
+   import { REPLYPOST } from '@/store/post/action-types'
 
    export default {
      name: 'replyPost',

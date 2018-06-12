@@ -45,13 +45,13 @@
 <script>
   import AddTopic from './AddTopic'
   import EditForum from '../forums/EditForum'
-  import Confirm from '../../components/shared/Confirm'
+  import Confirm from '@/components/shared/Confirm'
 
   import { mapState, mapActions } from 'vuex'
-  import store from '../../store'
-  import { router } from '../../plugins/vue-router'  
-  import { DELETEFORUM } from '../../store/forum/action-types'
-  import { FETCHTOPICSFORUM, FETCHTOPICS } from '../../store/topic/action-types'
+  import store from '@/store'
+  import { router } from '@/plugins/vue-router'  
+  import { DELETEFORUM } from '@/store/forum/action-types'
+  import { FETCHTOPICSFORUM, FETCHTOPICS } from '@/store/topic/action-types'
 
 export default {
   name: 'topics',

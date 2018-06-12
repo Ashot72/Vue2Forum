@@ -10,7 +10,7 @@
 
 <script>
    import Form from '../shared/Form'
-   import { UPDATEPOST } from '../../store/post/action-types'
+   import { UPDATEPOST } from '@/store/post/action-types'
 
    export default {
      name: 'editPost',

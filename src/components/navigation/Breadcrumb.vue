@@ -3,8 +3,8 @@
 </template>
 
 <script>
-  import { FETCHFORUM } from '../../store/forum/action-types'
-  import { FETCHTOPIC } from '../../store/topic/action-types'
+  import { FETCHFORUM } from '@/store/forum/action-types'
+  import { FETCHTOPIC } from '@/store/topic/action-types'
 
   export default {
     data () {

@@ -11,7 +11,7 @@
 
 <script>
   import Form from '../shared/Form'
-  import { ADDTOPIC } from '../../store/topic/action-types'
+  import { ADDTOPIC } from '@/store/topic/action-types'
 
   export default {
    name: 'addTopic', 

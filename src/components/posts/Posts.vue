@@ -57,13 +57,13 @@
   import EditPost from '../posts/EditPost'
   import ReplyPost from '../posts/ReplyPost'
 
-  import { router } from '../../plugins/vue-router'
+  import { router } from '@/plugins/vue-router'
 
   import { mapState, mapActions } from 'vuex'
-  import store from '../../store'
-  import Confirm from '../../components/shared/Confirm'
-  import { DELETETOPIC } from '../../store/topic/action-types'
-  import { FETCHPOSTSTOPIC, FETCHPOSTS, DELETEPOST, ISANSWER } from '../../store/post/action-types'
+  import store from '@/store'
+  import Confirm from '@/components/shared/Confirm'
+  import { DELETETOPIC } from '@/store/topic/action-types'
+  import { FETCHPOSTSTOPIC, FETCHPOSTS, DELETEPOST, ISANSWER } from '@/store/post/action-types'
   
   export default {
     data() {

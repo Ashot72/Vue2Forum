@@ -11,7 +11,7 @@
 
 <script>
    import Form from './form'
-   import { ADDFORUM } from '../../store/forum/action-types'
+   import { ADDFORUM } from '@/store/forum/action-types'
 
   export default {
     name: 'addForum', 

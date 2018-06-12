@@ -11,8 +11,8 @@
 
 <script>
   import Form from './form'
-  import { router } from '../../plugins/vue-router'
-  import { UPDATEFORUM } from '../../store/forum/action-types'
+  import { router } from '@/plugins/vue-router'
+  import { UPDATEFORUM } from '@/store/forum/action-types'
 
   export default {
     name: 'editForum', 

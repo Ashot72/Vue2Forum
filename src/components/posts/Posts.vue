@@ -61,7 +61,7 @@
 
   import { mapState, mapActions } from 'vuex'
   import store from '@/store'
-  import Confirm from '@/components/shared/Confirm'
+  import Confirm from '../shared/Confirm'
   import { DELETETOPIC } from '@/store/topic/action-types'
   import { FETCHPOSTSTOPIC, FETCHPOSTS, DELETEPOST, ISANSWER } from '@/store/post/action-types'
   

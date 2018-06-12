@@ -45,7 +45,7 @@
 <script>
   import AddTopic from './AddTopic'
   import EditForum from '../forums/EditForum'
-  import Confirm from '@/components/shared/Confirm'
+  import Confirm from '../shared/Confirm'
 
   import { mapState, mapActions } from 'vuex'
   import store from '@/store'

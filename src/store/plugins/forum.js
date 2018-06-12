@@ -36,7 +36,7 @@ export default {
       config.url = config.url.substring(0, index - 1)
     }
     const separator = config.url.indexOf('?') === -1 ? '?' : '&'
-    return config.url + separator + 'auth=' + this.getIdToken()
+    return `${ config.url }${ separator }auth=${ this.getIdToken() }`
   },
   fetchForums() {
     this.auth = false
@@ -102,12 +102,7 @@ export default {
   },
   getIdToken() {
     const storage = localStorage.getItem(this.storageKey)
-    if (storage) {
-      const vueForum = JSON.parse(storage)   
-      return vueForum.idToken        
-    } else {
-      return null
-    }            
+    return storage ? JSON.parse(storage).idToken : null    
   },
   _refreshToken(req) {
     this.auth = false

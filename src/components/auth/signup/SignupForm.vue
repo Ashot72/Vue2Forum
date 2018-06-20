@@ -73,12 +73,9 @@
     }
    },
    computed: {       
-     confirmPasswordState() {
-      const { confirmPassword: { $dirty, $error } } = this.$v.form
-
-      if (!$dirty) return null
-      if (!$error) return true
-        return false
+      confirmPasswordState() {
+        const { confirmPassword: { $dirty, $error } } = this.$v.form
+        return !$dirty ? null : !$error ? true : false 
       },
       invalidConfirmPasswordFeedback() {
         const { confirmPassword: { required, minLen, sameAs } } = this.$v.form

@@ -24,3 +24,4 @@ Go to [How to run Vue.js 2 Forum](https://ashot72.github.io/Vue2Forum/index.html
 
 Go to [Vue.js 2 Forum description](https://ashot72.github.io/Vue2Forum/description/index.html) page
 
+Go to [How to run Nuxt.js 2 Forum]( https://github.com/Ashot72/Nuxt2Forum) page for Nuxt version of this forum

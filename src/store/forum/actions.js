@@ -35,16 +35,17 @@ export default {
         .catch(e => dispatch(FAILED, e, { root: true })) 
     },
     [UPDATEFORUMBYTOPIC] (context, { forumId, topicId }) {
-      return v.$forums.fetchForum(forumId)
-        .then(({ data }) => {
-          const { topics, topicsId } = data
-
-          let index = 0
-          if (topicsId) {
-            index = topicsId.length
-          }         
-          return v.$forums.updateForumAndTopicId(topics + 1, forumId, { [index]: topicId })
-        })        
+      return v.$forums.fetchForum(forumId).then(({ data }) => {
+        const { topics, topicsId } = data
+        if (topicsId) {
+          topicsId.push(topicId)
+          return v.$forums.updateForumAndTopicId(topics + 1, forumId, topicsId)
+        } else {
+          v.$forums
+            .addForumTopicId(forumId, { 0: topicId })
+            .then(() => v.$forums.updateForum(forumId, { topics: 1 }))
+        }
+     })    
     },
     [UPDATEFORUM] ({ dispatch }, forum)  {
       return v.$forums.updateForum(forum.id, Object.assign({ }, forum, { id: null }))
@@ -57,24 +58,18 @@ export default {
 
           for (let key in topicsId) {
             const topicId = topicsId[key]
-              commit(`topic/${ DELETETOPICBYFORUM }`, topicId, { root: true })             
+              dispatch(`topic/${ DELETETOPICBYFORUM }`, topicId, { root: true })             
             }
             return v.$forums.deleteForum(forumId)
           })  
           .catch(e => dispatch(FAILED, e, { root: true }))      
     },
     [DELETEFORUMTOPICID] (context, { forumId, topicId }) {
-      return v.$forums.fetchForum(forumId)
-        .then(({ data }) => {
-          const topicsId = data.topicsId
-
-          for (let key in topicsId) {
-            const tid = topicsId[key]
-              if (topicId === tid) {
-                v.$forums.deleteForumTopicId(forumId, { [key]: null })                  
-                break           
-              }
-          }
-        })      
+     return v.$forums
+      .fetchForum(forumId)
+      .then(({ data: { topics, topicsId } }) => {
+        const newTopicIds = topicsId.filter(t => t !== topicId)
+        return v.$forums.updateForumAndTopicId(topics - 1, forumId, newTopicIds)
+      })  
     }
 }

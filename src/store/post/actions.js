@@ -90,20 +90,27 @@ export default {
         .then(() => commit(REPLY, post)) 
         .catch(e => dispatch(FAILED, e, { root: true })) 
     },
-    [DELETEPOST] ({ dispatch }, post) { 
-      return v.$forums.fetchTopic(post.topicId)
-        .then(({ data }) => {
-          const postsId = data.postsId
-
-          for (let key in postsId) {
-            const postId = postsId[key]
-            dispatch(`topic/${ DELETETOPICPOSTID }`, { topicId: post.topicId, postId: postId }, { root: true })
-        }
-
-        return v.$forums.deletePost(post.id)
-          .then(() => dispatch(FETCHPOSTS, post.topicId))
-        }) 
-        .catch(e => dispatch(FAILED, e, { root: true })) 
+    [DELETEPOST] ({ dispatch }, { id, forumId, topicId }) { 
+      return v.$forums
+      .fetchTopic(topicId)
+      .then(() => {
+        dispatch(
+          `topic/${DELETETOPICPOSTID}`,
+          { topicId, postId: id },
+          { root: true }
+        )
+        return v.$forums
+          .deletePost(id)
+          .then(() =>
+            v.$forums
+              .fetchForum(forumId)
+              .then(({ data: { posts } }) =>
+                v.$forums.updateForum(forumId, { posts: posts - 1 })
+              )
+          )
+          .then(() => dispatch(FETCHPOSTS, topicId))
+      })
+      .catch(e => dispatch(FAILED, e, { root: true }))
      },
      [DELETEPOSTBYTOPIC] (context, topicId) {     
       return v.$forums.fetchTopic(topicId)
